@@ -5,12 +5,15 @@ import {LuWallet} from "react-icons/lu";
 import {IoRepeat} from "react-icons/io5";
 import {RiUserSettingsLine} from "react-icons/ri";
 import {PiSignOutBold} from "react-icons/pi";
+import Header from "./Header";
+import DashboardHome from "../Pages/DashboardHome";
+import Footer from "./Footer";
 
 const Dashboard = () => {
     return (
         <>
-            <div className="w-full h-screen flex">
-                <div className="w-[22%] h-[100vh] bg-[#f5f6fa] px-10 py-3">
+            <div className="w-full h-max flex justify-between">
+                <div className="w-[22%] phone:hidden h-[100vh] bg-[#f5f6fa] px-10 py-3">
                     <div className="w-full h-20 flex  ">
                         <img src={logo} alt="" className=" h-9" />
                     </div>
@@ -66,7 +69,11 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                <div className=""></div>
+                <div className="w-[78%] phone:w-full h-screen overflow-y-auto bg-black relative">
+                  <Header/>
+                  <DashboardHome/>
+                  <Footer/>
+                </div>
             </div>
         </>
     );
