@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 // import {useNavigate} from 'react-router-dom'
 
@@ -57,9 +57,12 @@ const Login = () => {
                                 </Link>
                             </p>
                         </div>
+                        <NavLink to={"/dashbaord"} className='w-full h-max'>
+
                         <button className="w-full py-4 bg-[#0083e2] text-white rounded text-sm">
                             LOGIN
                         </button>
+                        </NavLink>
                     </div>
                     <div className="w-full h-[10%] text-white flex items-center justify-center">
                         <p>
