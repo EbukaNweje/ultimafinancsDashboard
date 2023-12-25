@@ -9,9 +9,9 @@ const Login = () => {
     return (
         <>
             <div className="w-full h-screen flex items-center justify-center bg-black">
-                <div className="w-[30%] phone:w-[95%] h-[90%]">
-                    <div className="w-full h-[15%] flex items-center justify-center">
-                        <img src={logo} alt="" className="" />
+                <div className="w-[30%] phone:w-[95%] h-[85%]">
+                    <div className="w-full h-[10%] flex items-center justify-center">
+                        <img src={logo} alt="" className="h-10" />
                     </div>
                     <div className="w-full h-[30rem] bg-white flex flex-col items-center justify-between p-10 rounded-lg">
                         <div className="w-full flex flex-col h-max items-center gap-2">
@@ -51,25 +51,24 @@ const Login = () => {
                                 className="w-4 h-4"
                             />
                             <p className="w-max flex items-center gap-10 text-[rgb(65,80,118)] font-bold">
-                                Remember me{" "}
-                                <Link to={"/signup"} className="text-[rgb(0,131,226)] cursor-pointer">
-                                    Forgot Password
-                                </Link>
+                                Remember me <p> Forgot Password</p>
                             </p>
                         </div>
-                        <NavLink to={"/dashbaord"} className='w-full h-max'>
-
-                        <button className="w-full py-4 bg-[#0083e2] text-white rounded text-sm">
-                            LOGIN
-                        </button>
+                        <NavLink to={"/dashbaord"} className="w-full h-max">
+                            <button className="w-full py-4 bg-[#0083e2] text-white rounded text-sm">
+                                LOGIN
+                            </button>
                         </NavLink>
                     </div>
                     <div className="w-full h-[10%] text-white flex items-center justify-center">
                         <p>
                             Don’t have an account?{" "}
-                            <span className=" text-white transition-all duration-75 hover:text-[rgb(0,131,226)] cursor-pointer">
-                                Sign Up here
-                            </span>
+                            <Link
+                                to={"/signup"}
+                                className="text-[rgb(0,131,226)] cursor-pointer"
+                            >
+                                Sign up here
+                            </Link>
                         </p>
                     </div>
                 </div>

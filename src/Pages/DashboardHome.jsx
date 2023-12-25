@@ -18,7 +18,7 @@ const DashboardHome = () => {
                     </button>
                 </div>
             </div>
-            <div className="w-full h-12 rounded bg-[#1083d4]"></div>
+            <div className="w-full h-12 rounded bg-[#1083d4] phone:mt-8"></div>
             <div className="w-full h-max flex flex-col gap-4">
                 <p className="text-xl text-[rgb(54,74,99)] font-bold">
                     Overview

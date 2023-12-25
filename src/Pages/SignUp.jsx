@@ -1,4 +1,5 @@
 
+import {Link} from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const SignUp = () => {
@@ -177,9 +178,12 @@ const SignUp = () => {
                     <div className="w-full h-10 text-white flex items-end justify-center ">
                         <p className="w-max flex items-center justify-between">
                             Already have an account?
-                            <span className=" text-white transition-all duration-75 hover:text-[rgb(0,131,226)] cursor-pointer">
+                            <Link
+                                to={"/login"}
+                                className="text-[rgb(0,131,226)] cursor-pointer"
+                            >
                                 Login here
-                            </span>
+                            </Link>
                         </p>
                     </div>
                 </div>
