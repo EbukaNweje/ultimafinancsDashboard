@@ -16,6 +16,8 @@ import Transactions from "../Pages/Transactions";
 import Referrals from "../Pages/Referrals";
 import Security from "../Pages/Security";
 import Setting from "../Pages/Setting";
+import {useNavigate} from "react-router-dom";
+import {toast} from "react-hot-toast";
 
 const Dashboard = () => {
     const [dashboard, setDashboard] = useState(true);
@@ -27,6 +29,7 @@ const Dashboard = () => {
     const [security, setSecurity] = useState(false);
     const [settings, setSettings] = useState(false);
     const [showDrop, setShowDrop] = useState(false);
+    const nav = useNavigate();
 
     const handleShowDrop = () => {
         setShowDrop(!showDrop);
@@ -121,6 +124,20 @@ const Dashboard = () => {
         setShowDrop(false);
     };
 
+    const handleLogout = () => {
+        const toastLoadingId = toast.loading("Please wait...");
+        setTimeout(() => {
+            localStorage.removeItem("ultimaUser");
+            nav("/login");
+            toast.dismiss(toastLoadingId);
+        }, 3000);
+    };
+
+    const userData = localStorage?.getItem("ultimaUser")
+        ? JSON.parse(localStorage?.getItem("ultimaUser"))
+        : [];
+    console.log("UCD:", userData);
+
     return (
         <>
             <div className="w-full h-max flex justify-between">
@@ -198,7 +215,10 @@ const Dashboard = () => {
                             <RiUserSettingsLine className="w-6 h-6" />
                             <p className="text-[15px] font-bold ">Settings</p>
                         </div>
-                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-white rounded transition-all cursor-pointer">
+                        <div
+                            className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-white rounded transition-all cursor-pointer"
+                            onClick={handleLogout}
+                        >
                             <PiSignOutBold className="w-6 h-6" />
                             <p className="text-[15px] font-bold ">Sign Out</p>
                         </div>
@@ -216,23 +236,24 @@ const Dashboard = () => {
                         handleSet={handleShowSettings}
                         handleDrop={handleShowDrop}
                         showDrop={showDrop}
+                        logout={handleLogout}
                     />
                     {dashboard ? (
-                        <DashboardHome />
+                        <DashboardHome userData={userData} />
                     ) : invest ? (
-                        <Invest />
+                        <Invest userData={userData} />
                     ) : activeInvestment ? (
-                        <ActiveInvestment />
+                        <ActiveInvestment userData={userData} />
                     ) : withdraw ? (
-                        <Withdraw />
+                        <Withdraw userData={userData} />
                     ) : transaction ? (
-                        <Transactions />
+                        <Transactions userData={userData} />
                     ) : referrals ? (
-                        <Referrals />
+                        <Referrals userData={userData} />
                     ) : security ? (
-                        <Security />
+                        <Security userData={userData} />
                     ) : settings ? (
-                        <Setting />
+                        <Setting userData={userData} />
                     ) : null}
                     <Footer />
                 </div>

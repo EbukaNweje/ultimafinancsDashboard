@@ -1,10 +1,49 @@
-import { Link, NavLink } from "react-router-dom";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import logo from "../assets/logo.png";
-// import {useNavigate} from 'react-router-dom'
+import {useState} from "react";
+import {toast} from "react-hot-toast";
+import axios from "axios";
 
 const Login = () => {
-
-
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+    const nav = useNavigate();
+    const handleLogin = (e) => {
+        e.preventDefault();
+        if (!email && !password) {
+            alert("Please fill out all fields");
+        } else {
+            setLoading(true);
+            const toastLoadingId = toast.loading("Please wait...");
+            const data = {
+                email: email,
+                password: password,
+            };
+            const url = "https://ultima-finances-backend.vercel.app/api/login";
+            axios
+                .post(url, data)
+                .then((res) => {
+                    console.log(res.data);
+                    localStorage.setItem(
+                        "ultimaUser",
+                        JSON.stringify(res?.data)
+                    );
+                    setTimeout(() => {
+                        toast.dismiss(toastLoadingId);
+                        toast.success("Success");
+                        nav("/dashbaord");
+                    }, 3000);
+                    setLoading(false);
+                })
+                .catch((err) => {
+                    console.log(err);
+                    toast.dismiss(toastLoadingId);
+                    toast.error(err.response.data.message);
+                    setLoading(false);
+                });
+        }
+    };
 
     return (
         <>
@@ -24,12 +63,14 @@ const Login = () => {
                         </div>
                         <div className="w-full h-max flex flex-col gap-2">
                             <p className="text-[rgb(65,80,118)] font-bold">
-                                Username
+                                Email
                             </p>
                             <input
-                                type="text"
-                                className="w-full h-11 border border-gray-200 text-gray-200 placeholder:text-gray-400 placeholder:text-[15px] rounded pl-4 outline-gray-200"
-                                placeholder="Username"
+                                type="email"
+                                className="w-full h-11 border border-gray-200 text-gray-500 placeholder:text-gray-400 placeholder:text-[15px] rounded pl-4 outline-gray-200"
+                                placeholder="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
                         <div className="w-full h-max flex flex-col gap-2">
@@ -38,8 +79,10 @@ const Login = () => {
                             </p>
                             <input
                                 type="password"
-                                className="w-full h-11 border border-gray-200 text-gray-200 placeholder:text-gray-400 placeholder:text-[15px] rounded pl-4 outline-gray-200"
+                                className="w-full h-11 border border-gray-200 text-gray-500 placeholder:text-gray-400 placeholder:text-[15px] rounded pl-4 outline-gray-200"
                                 placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
 
@@ -55,8 +98,12 @@ const Login = () => {
                             </p>
                         </div>
                         <NavLink to={"/dashbaord"} className="w-full h-max">
-                            <button className="w-full py-4 bg-[#0083e2] text-white rounded text-sm">
-                                LOGIN
+                            <button
+                                className="w-full py-4 bg-[#0083e2] text-white rounded text-sm"
+                                disabled={loading}
+                                onClick={handleLogin}
+                            >
+                                {loading ? "Loading..." : "LOGIN"}
                             </button>
                         </NavLink>
                     </div>

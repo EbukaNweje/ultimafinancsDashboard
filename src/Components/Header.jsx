@@ -20,7 +20,8 @@ const Header = ({
     handleSec,
     handleSet,
     handleDrop,
-    showDrop
+    showDrop,
+    logout
 }) => {
    
     return (
@@ -157,7 +158,7 @@ const Header = ({
                                                 Settings
                                             </p>
                                         </div>
-                                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer">
+                                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer" onClick={logout}>
                                             <PiSignOutBold className="w-6 h-6" />
                                             <p className="text-[15px] font-bold ">
                                                 Sign Out

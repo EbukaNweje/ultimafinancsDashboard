@@ -2,10 +2,15 @@ import {IoWalletOutline} from "react-icons/io5";
 import computer from "../assets/computer.png";
 
 const DashboardHome = () => {
+
+    const userData = localStorage?.getItem("ultimaUser")
+        ? JSON.parse(localStorage?.getItem("ultimaUser"))
+        : [];
+    
     return (
         <div className="w-full mt-16 min-h-[81vh] h-max bg-white px-20 phone:px-8 pt-5 pb-5 flex flex-col gap-4">
             <p className="text-xl text-[rgb(54,74,99)] font-bold">
-                Welcome Back angelo12!
+                Welcome Back {userData?.fullName}!
             </p>
             <div className="w-full h-14 flex phone:flex-col phone:items-start justify-between items-center bg-gray-50">
                 <p>At a glance summary of your account. Have fun!</p>
@@ -29,7 +34,7 @@ const DashboardHome = () => {
                             Account balance in USD
                         </p>
                         <p className="text-xl font-bold text-[rgb(229,233,242)]">
-                            $0.00
+                            ${userData?.accountBalance}.00
                         </p>
                     </div>
                     <div className="w-[23%] phone:w-full h-28 bg-[#e5e9f2] p-4 rounded flex flex-col justify-center gap-4">
@@ -37,7 +42,7 @@ const DashboardHome = () => {
                             Active Deposit
                         </p>
                         <p className="text-xl font-bold text-[rgb(54,74,99)]">
-                            $0.00
+                            ${userData?.activeDeposit}.00
                         </p>
                     </div>
                     <div className="w-[23%] phone:w-full h-28 bg-[rgb(54,74,99)] p-4 rounded flex flex-col justify-center gap-4">
@@ -45,7 +50,7 @@ const DashboardHome = () => {
                             Total Earned
                         </p>
                         <p className="text-xl font-bold text-[rgb(229,233,242)]">
-                            $0.00
+                            ${userData?.totalEarned}.00
                         </p>
                     </div>
                     <div className="w-[23%] phone:w-full h-28 bg-[#e5e9f2] p-4 rounded flex flex-col justify-center gap-4">
@@ -53,7 +58,7 @@ const DashboardHome = () => {
                             Total Deposit
                         </p>
                         <p className="text-xl font-bold text-[rgb(54,74,99)]">
-                            $0.00
+                            ${userData?.totalDeposit}.00
                         </p>
                     </div>
                 </div>
@@ -97,7 +102,7 @@ const DashboardHome = () => {
                                 <IoWalletOutline className="w-6 h-6" />
                             </span>
                             <p className="font-bold text-xl text-white">
-                                Active Deposit: $ 0.00
+                                Active Deposit: $ {userData?.activeDeposit}.00
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
@@ -105,7 +110,7 @@ const DashboardHome = () => {
                                 <IoWalletOutline className="w-6 h-6" />
                             </span>
                             <p className="font-bold text-xl text-white">
-                                Last Deposit: $ 0.00
+                                Last Deposit: $ {userData?.lastDeposit}.00
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
@@ -113,7 +118,7 @@ const DashboardHome = () => {
                                 <IoWalletOutline className="w-6 h-6" />
                             </span>
                             <p className="font-bold text-xl text-white">
-                                Total Deposit: $ 0.00
+                                Total Deposit: $ {userData?.totalDeposit}.00
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
@@ -121,7 +126,7 @@ const DashboardHome = () => {
                                 <IoWalletOutline className="w-6 h-6" />
                             </span>
                             <p className="font-bold text-xl text-white">
-                                Total Earned: $ 0.00
+                                Total Earned: $ {userData?.totalEarned}.00
                             </p>
                         </div>
                     </div>
@@ -131,7 +136,7 @@ const DashboardHome = () => {
                                 <IoWalletOutline className="w-6 h-6" />
                             </span>
                             <p className="font-bold text-xl text-white">
-                                Pending Withdrawal: $ 0.00
+                                Pending Withdrawal: $ {userData?.pendingWithdrawal}.00
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
@@ -139,7 +144,7 @@ const DashboardHome = () => {
                                 <IoWalletOutline className="w-6 h-6" />
                             </span>
                             <p className="font-bold text-xl text-white">
-                                Last Withdrawal: $ 0.00
+                                Last Withdrawal: $ {userData?.lastWithdrawal}.00
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
@@ -147,7 +152,7 @@ const DashboardHome = () => {
                                 <IoWalletOutline className="w-6 h-6" />
                             </span>
                             <p className="font-bold text-xl text-white">
-                                Total Withdrawal: $ 0.00
+                                Total Withdrawal: $ {userData?.totalWithdrawal}.00
                             </p>
                         </div>
                     </div>
