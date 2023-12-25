@@ -11,7 +11,7 @@ const Invest = () => {
                   Select a Plan
               </p>
               <div className="w-full h-max">
-                  <div className="w-full h-9  flex gap-2 items-center pl-4 bg-[#ff950d] text-white8 border-b border-b-gray-200">
+                  <div className="w-full h-9  flex gap-2 items-center pl-4 bg-[#ff950d] text-white border-b border-b-gray-200">
                       <input type="radio" />
                       4.5% After 24 hours
                   </div>
@@ -37,7 +37,7 @@ const Invest = () => {
                   </div>
               </div>
               <div className="w-full h-max">
-                  <div className="w-full h-9  flex gap-2 items-center pl-4 bg-[#ff950d] text-white8 border-b border-b-gray-200">
+                  <div className="w-full h-9  flex gap-2 items-center pl-4 bg-[#ff950d] text-white border-b border-b-gray-200">
                       <input type="radio" />
                       4.5% After 24 hours
                   </div>
@@ -63,7 +63,7 @@ const Invest = () => {
                   </div>
               </div>
               <div className="w-full h-max">
-                  <div className="w-full h-9  flex gap-2 items-center pl-4 bg-[#ff950d] text-white8 border-b border-b-gray-200">
+                  <div className="w-full h-9  flex gap-2 items-center pl-4 bg-[#ff950d] text-white border-b border-b-gray-200">
                       <input type="radio" />
                       4.5% After 24 hours
                   </div>
@@ -89,7 +89,7 @@ const Invest = () => {
                   </div>
               </div>
               <div className="w-full h-max">
-                  <div className="w-full h-9  flex gap-2 items-center pl-4 bg-[#ff950d] text-white8 border-b border-b-gray-200">
+                  <div className="w-full h-9  flex gap-2 items-center pl-4 bg-[#ff950d] text-white border-b border-b-gray-200">
                       <input type="radio" />
                       4.5% After 24 hours
                   </div>

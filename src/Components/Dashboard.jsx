@@ -55,9 +55,9 @@ const Dashboard = () => {
         setShowDrop(false);
     };
     const handleShowActiveInvestment = () => {
-        setDashboard(true);
+        setDashboard(false);
         setInvest(false);
-        setActiveInvestment(false);
+        setActiveInvestment(true);
         setWithdraw(false);
         setTransaction(false);
         setReferrals(false);
