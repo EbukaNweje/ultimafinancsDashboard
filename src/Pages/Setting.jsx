@@ -1,4 +1,8 @@
 const Setting = () => {
+
+    const userData = localStorage?.getItem("ultimaUser")
+        ? JSON.parse(localStorage?.getItem("ultimaUser"))
+        : [];
     return (
         <div className="w-full mt-16 min-h-[81vh] bg-white px-20 phone:px-5 pt-5 flex flex-col gap-5 pb-5">
             <p className="text-3xl text-[rgb(54,74,99)]">Your Account</p>
@@ -8,7 +12,7 @@ const Setting = () => {
                         Account Name:
                     </div>
                     <div className="w-1/2 h-full border-l flex items-center pl-3 text-sm text-[rgb(82,100,132)]">
-                        angelo12
+                        {userData?.userName}
                     </div>
                 </div>
                 <div className="w-full h-10 phone:h-16 flex items-center border-b ">
@@ -27,6 +31,7 @@ const Setting = () => {
                         <input
                             type="text"
                             className="w-[90%] h-8 pl-3 border rounded border-gray-400 outline-sky-100"
+                            value={userData?.fullName}
                         />
                     </div>
                 </div>
@@ -148,6 +153,7 @@ const Setting = () => {
                         <input
                             type="text"
                             className="w-[90%] h-8 pl-3 border rounded border-gray-400 outline-sky-100"
+                            value={userData?.email}
                         />
                     </div>
                 </div>
