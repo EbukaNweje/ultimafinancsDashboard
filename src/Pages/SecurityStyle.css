@@ -1,0 +1,35 @@
+.SecurityBody {
+    width: 100%;
+    height: max-content;
+}
+
+.SecurityBody h1 {
+    font-family: Nunito;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 66px;
+    color: rgb(54, 74, 99);
+    margin: 10px 0px;
+    width: 90%;
+}
+
+.Security {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.SecurityInput {
+    display: flex;
+    margin-top: 5px;
+}
+
+.Btn {
+    width: 50px;
+    background: #6576FF;
+    color: white;
+    margin: 10px 0px;
+    height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+}
