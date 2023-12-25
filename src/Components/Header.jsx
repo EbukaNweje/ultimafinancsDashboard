@@ -10,13 +10,19 @@ import {MdOutlineDashboard} from "react-icons/md";
 import {LuUserSquare2, LuWallet} from "react-icons/lu";
 import {useState} from "react";
 
-const Header = () => {
-    const [showDrop, setShowDrop] = useState(false);
-
-    const handleShowDrop = () => {
-        setShowDrop(!showDrop);
-    };
-
+const Header = ({
+    handleInv,
+    handleDash,
+    handleActive,
+    handleWith,
+    handleTrans,
+    handleRef,
+    handleSec,
+    handleSet,
+    handleDrop,
+    showDrop
+}) => {
+   
     return (
         <>
             <div className="w-[78%] phone:w-full h-16 fixed top-0 bg-black flex justify-center">
@@ -37,7 +43,7 @@ const Header = () => {
                         <div className="w-max h-full flex items-center gap-2 cursor-pointer relative">
                             <span
                                 className="w-8 h-8 rounded-full bg-[rgb(101,118,255)] flex items-center justify-center"
-                                onClick={handleShowDrop}
+                                onClick={handleDrop}
                             >
                                 <IoMenu className="w-5 h-5 text-white" />
                             </span>
@@ -79,49 +85,73 @@ const Header = () => {
                                         </p>
                                     </div>
                                     <div className="w-full h-max bg-white px-8 py-4">
-                                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer">
+                                        <div
+                                            className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer"
+                                            onClick={handleDash}
+                                        >
                                             <MdOutlineDashboard className="w-6 h-6" />
                                             <p className="text-[15px] font-bold ">
                                                 Dashboard
                                             </p>
                                         </div>
-                                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer">
+                                        <div
+                                            className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer"
+                                            onClick={handleInv}
+                                        >
                                             <LuUserSquare2 className="w-6 h-6" />
                                             <p className="text-[15px] font-bold ">
                                                 Invest
                                             </p>
                                         </div>
-                                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer">
+                                        <div
+                                            className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer"
+                                            onClick={handleActive}
+                                        >
                                             <LuWallet className="w-6 h-6" />
                                             <p className="text-[15px] font-bold ">
                                                 Active Investment
                                             </p>
                                         </div>
-                                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer">
+                                        <div
+                                            className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer"
+                                            onClick={handleWith}
+                                        >
                                             <IoRepeat className="w-6 h-6" />
                                             <p className="text-[15px] font-bold ">
                                                 Withdrawal
                                             </p>
                                         </div>
-                                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer">
+                                        <div
+                                            className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer"
+                                            onClick={handleTrans}
+                                        >
                                             <RiUserSettingsLine className="w-6 h-6" />
                                             <p className="text-[15px] font-bold ">
                                                 Transactions
                                             </p>
                                         </div>
-                                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer">
+                                        <div
+                                            className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer"
+                                            onClick={handleRef}
+                                        >
                                             <RiUserSettingsLine className="w-6 h-6" />
                                             <p className="text-[15px] font-bold ">
                                                 Referrals
                                             </p>
                                         </div>
-                                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer">
+                                        <div
+                                            className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer"
+                                            onClick={handleSec}
+                                        >
                                             <RiUserSettingsLine className="w-6 h-6" />
                                             <p className="text-[15px] font-bold ">
                                                 Security
                                             </p>
                                         </div>
-                                        <div className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[rgb(101,118,255)] hover:bg-gray-100 rounded transition-all cursor-pointer">
+                                        <div
+                                            className="w-full h-10 py-2 flex items-center gap-3 text-[#526484] hover:text-[hsl(233,100%,70%)] hover:bg-gray-100 rounded transition-all cursor-pointer"
+                                            onClick={handleSet}
+                                        >
                                             <RiUserSettingsLine className="w-6 h-6" />
                                             <p className="text-[15px] font-bold ">
                                                 Settings

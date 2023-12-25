@@ -26,6 +26,11 @@ const Dashboard = () => {
     const [referrals, setReferrals] = useState(false);
     const [security, setSecurity] = useState(false);
     const [settings, setSettings] = useState(false);
+    const [showDrop, setShowDrop] = useState(false);
+
+    const handleShowDrop = () => {
+        setShowDrop(!showDrop);
+    };
 
     const handleShowDashboard = () => {
         setDashboard(true);
@@ -36,6 +41,7 @@ const Dashboard = () => {
         setReferrals(false);
         setSecurity(false);
         setSettings(false);
+        setShowDrop(false);
     };
     const handleShowInvestment = () => {
         setDashboard(false);
@@ -46,6 +52,7 @@ const Dashboard = () => {
         setReferrals(false);
         setSecurity(false);
         setSettings(false);
+        setShowDrop(false);
     };
     const handleShowActiveInvestment = () => {
         setDashboard(true);
@@ -56,6 +63,7 @@ const Dashboard = () => {
         setReferrals(false);
         setSecurity(false);
         setSettings(false);
+        setShowDrop(false);
     };
     const handleShowWithdraw = () => {
         setDashboard(false);
@@ -66,6 +74,7 @@ const Dashboard = () => {
         setReferrals(false);
         setSecurity(false);
         setSettings(false);
+        setShowDrop(false);
     };
     const handleShowTransaction = () => {
         setDashboard(false);
@@ -76,6 +85,7 @@ const Dashboard = () => {
         setReferrals(false);
         setSecurity(false);
         setSettings(false);
+        setShowDrop(false);
     };
     const handleShowReferrals = () => {
         setDashboard(false);
@@ -86,6 +96,7 @@ const Dashboard = () => {
         setReferrals(true);
         setSecurity(false);
         setSettings(false);
+        setShowDrop(false);
     };
     const handleShowSecurity = () => {
         setDashboard(false);
@@ -96,6 +107,7 @@ const Dashboard = () => {
         setReferrals(false);
         setSecurity(true);
         setSettings(false);
+        setShowDrop(false);
     };
     const handleShowSettings = () => {
         setDashboard(false);
@@ -106,6 +118,7 @@ const Dashboard = () => {
         setReferrals(false);
         setSecurity(false);
         setSettings(true);
+        setShowDrop(false);
     };
 
     return (
@@ -192,7 +205,18 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <div className="w-[78%] phone:w-full h-screen overflow-y-auto bg-black relative">
-                    <Header />
+                    <Header
+                        handleDash={handleShowDashboard}
+                        handleInv={handleShowInvestment}
+                        handleActive={handleShowActiveInvestment}
+                        handleWith={handleShowWithdraw}
+                        handleTrans={handleShowTransaction}
+                        handleRef={handleShowReferrals}
+                        handleSec={handleShowSecurity}
+                        handleSet={handleShowSettings}
+                        handleDrop={handleShowDrop}
+                        showDrop={showDrop}
+                    />
                     {dashboard ? (
                         <DashboardHome />
                     ) : invest ? (
