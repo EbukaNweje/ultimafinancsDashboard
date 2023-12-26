@@ -9,13 +9,15 @@ import axios from 'axios'
 const UpdateWallet = ({Display}) => {
   const [data, setData] = useState()
   const [accountBalance, setAccountBalance] = useState()
-  const [totalProfit, setTotalProfit] = useState()
+  const [activeDeposit, setactiveDeposit] = useState()
   const [bonus, setBonus] = useState()
-  const [tradingAccounts, setTradingAccounts] = useState()
+  const [totalEarned, setTotalEarned] = useState()
   const [ref, setRef] = useState()
   const [totalDeposit, setTotalDeposit] = useState()
   const [totalWithdrawal, setTotalWithdrawal] = useState()
-  // const [sessionTime, setSessionTime] = useState()
+  const [pendingWithdrawal, setPendingWithdrawal] = useState()
+  const [lastWithdrawal, setLastWithdrawal] = useState()
+  const [lastDeposit, setLastDeposit] = useState()
   
 
     const url = `https://ultima-finances-backend.vercel.app/api/alluserdata`
@@ -87,7 +89,7 @@ const UpdateWallet = ({Display}) => {
       //   axios.get(sessionUrl).then((response)=>{ console.log(response) });
       // }
 
-      const updatedata = {accountBalance, bonus,  ref, totalDeposit, totalWithdrawal};
+      const updatedata = {accountBalance, bonus,  ref, totalDeposit, totalWithdrawal, activeDeposit, totalEarned, pendingWithdrawal, lastWithdrawal, lastDeposit};
       const updateprofile = (id) => {
         const updateuserurl = `https://ultima-finances-backend.vercel.app/api/userdata/${id}`
           console.log(updateuserurl)
@@ -130,24 +132,24 @@ const UpdateWallet = ({Display}) => {
             <span>${props.accountBalance}</span>
           </InputData>
 
-            {/* <InputData>
-            <label>Total Profit: </label>
-            <input  placeholder='Amount' onChange={(e)=> setTotalProfit(e.target.value)}/>
-            <Button onClick={(e)=>upddatebtn(props._id,e)} title={"lastDeposit"}>update</Button>
-            <span>${props.totalProfit}</span>
-          </InputData> */}
+            <InputData>
+            <label>Active Deposit: </label>
+            <input  placeholder='Amount' onChange={(e)=> setactiveDeposit(e.target.value)}/>
+            {/* <Button onClick={(e)=>upddatebtn(props._id,e)} title={"lastDeposit"}>update</Button> */}
+            <span>${props.activeDeposit}</span>
+          </InputData>
             <InputData>
             <label>Bonus: </label>
             <input placeholder='Amount' onChange={(e)=> setBonus(e.target.value)}/>
             {/* <Button onClick={(e)=>upddatebtn(props._id,e)} title={"lastDeposit"}>update</Button> */}
             <span>${props.bonus}</span>
           </InputData>
-            {/* <InputData>
-            <label>Total Investment: </label>
-            <input  placeholder='Amount' onChange={(e)=> setTradingAccounts(e.target.value)}/>
-            <Button onClick={(e)=>upddatebtn(props._id,e)} title={"lastDeposit"}>update</Button>
-            <span>${props.tradingAccounts}</span>
-          </InputData> */}
+            <InputData>
+            <label>Total Earned: </label>
+            <input  placeholder='Amount' onChange={(e)=> setTotalEarned(e.target.value)}/>
+            {/* <Button onClick={(e)=>upddatebtn(props._id,e)} title={"lastDeposit"}>update</Button> */}
+            <span>${props.totalEarned}</span>
+          </InputData>
             <InputData>
             <label>Referral Bonus: </label>
             <input  placeholder='Amount' onChange={(e)=> setRef(e.target.value)}/>
@@ -165,6 +167,24 @@ const UpdateWallet = ({Display}) => {
             <input  placeholder='Amount' onChange={(e)=> setTotalWithdrawal(e.target.value)}/>
             {/* <Button onClick={(e)=>upddatebtn(props._id,e)} title={"lastDeposit"}>update</Button> */}
             <span>${props.totalWithdrawal}</span>
+          </InputData>
+            <InputData>
+            <label>Pending Withdrawal: </label>
+            <input  placeholder='Amount' onChange={(e)=> setPendingWithdrawal(e.target.value)}/>
+            {/* <Button onClick={(e)=>upddatebtn(props._id,e)} title={"lastDeposit"}>update</Button> */}
+            <span>${props.pendingWithdrawal}</span>
+          </InputData>
+            <InputData>
+            <label>Last Withdrawal: </label>
+            <input  placeholder='Amount' onChange={(e)=> setLastWithdrawal(e.target.value)}/>
+            {/* <Button onClick={(e)=>upddatebtn(props._id,e)} title={"lastDeposit"}>update</Button> */}
+            <span>${props.lastWithdrawal}</span>
+          </InputData>
+            <InputData>
+            <label>Last Deposit: </label>
+            <input  placeholder='Amount' onChange={(e)=> setLastDeposit(e.target.value)}/>
+            {/* <Button onClick={(e)=>upddatebtn(props._id,e)} title={"lastDeposit"}>update</Button> */}
+            <span>${props.lastDeposit}</span>
           </InputData>
           </UpdateDiv>
 
