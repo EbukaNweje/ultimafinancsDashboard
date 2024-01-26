@@ -55,7 +55,7 @@ const Login = () => {
                     <div className="w-full h-[30rem] bg-white flex flex-col items-center justify-between p-10 rounded-lg">
                         <div className="w-full flex flex-col h-max items-center gap-2">
                             <p className="text-[rgb(76,47,110)] text-xl font-bold">
-                                Welcome to ultimafinances.com
+                                Welcome to ultimafinances
                             </p>
                             <p className="text-[rgb(65,80,118)] text-sm">
                                 Enter your data and access our platform
