@@ -18,6 +18,7 @@ import Security from "../Pages/Security";
 import Setting from "../Pages/Setting";
 import {useNavigate} from "react-router-dom";
 import {toast} from "react-hot-toast";
+import Deposit from "../Pages/Deposit";
 
 const Dashboard = () => {
     const [dashboard, setDashboard] = useState(true);
@@ -28,6 +29,7 @@ const Dashboard = () => {
     const [referrals, setReferrals] = useState(false);
     const [security, setSecurity] = useState(false);
     const [settings, setSettings] = useState(false);
+    const [deposit, setDeposit] = useState(false);
     const [showDrop, setShowDrop] = useState(false);
     const nav = useNavigate();
 
@@ -45,6 +47,7 @@ const Dashboard = () => {
         setSecurity(false);
         setSettings(false);
         setShowDrop(false);
+        setDeposit(false);
     };
     const handleShowInvestment = () => {
         setDashboard(false);
@@ -56,6 +59,7 @@ const Dashboard = () => {
         setSecurity(false);
         setSettings(false);
         setShowDrop(false);
+        setDeposit(false);
     };
     const handleShowActiveInvestment = () => {
         setDashboard(false);
@@ -67,6 +71,7 @@ const Dashboard = () => {
         setSecurity(false);
         setSettings(false);
         setShowDrop(false);
+        setDeposit(false);
     };
     const handleShowWithdraw = () => {
         setDashboard(false);
@@ -78,6 +83,7 @@ const Dashboard = () => {
         setSecurity(false);
         setSettings(false);
         setShowDrop(false);
+        setDeposit(false);
     };
     const handleShowTransaction = () => {
         setDashboard(false);
@@ -89,6 +95,7 @@ const Dashboard = () => {
         setSecurity(false);
         setSettings(false);
         setShowDrop(false);
+        setDeposit(false);
     };
     const handleShowReferrals = () => {
         setDashboard(false);
@@ -100,6 +107,7 @@ const Dashboard = () => {
         setSecurity(false);
         setSettings(false);
         setShowDrop(false);
+        setDeposit(false);
     };
     const handleShowSecurity = () => {
         setDashboard(false);
@@ -111,6 +119,7 @@ const Dashboard = () => {
         setSecurity(true);
         setSettings(false);
         setShowDrop(false);
+        setDeposit(false);
     };
     const handleShowSettings = () => {
         setDashboard(false);
@@ -122,6 +131,19 @@ const Dashboard = () => {
         setSecurity(false);
         setSettings(true);
         setShowDrop(false);
+        setDeposit(false);
+    };
+    const handleShowDeposit = () => {
+        setDashboard(false);
+        setInvest(false);
+        setActiveInvestment(false);
+        setWithdraw(false);
+        setTransaction(false);
+        setReferrals(false);
+        setSecurity(false);
+        setSettings(false);
+        setShowDrop(false);
+        setDeposit(true);
     };
 
     const handleLogout = () => {
@@ -239,7 +261,10 @@ const Dashboard = () => {
                         logout={handleLogout}
                     />
                     {dashboard ? (
-                        <DashboardHome userData={userData} />
+                        <DashboardHome
+                            userData={userData}
+                            handleDep={handleShowDeposit}
+                        />
                     ) : invest ? (
                         <Invest userData={userData} />
                     ) : activeInvestment ? (
@@ -252,6 +277,8 @@ const Dashboard = () => {
                         <Referrals userData={userData} />
                     ) : security ? (
                         <Security userData={userData} />
+                    ) : deposit ? (
+                        <Deposit userData={userData} />
                     ) : settings ? (
                         <Setting userData={userData} />
                     ) : null}
