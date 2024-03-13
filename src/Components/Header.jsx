@@ -23,6 +23,8 @@ const Header = ({
     showDrop,
     logout
 }) => {
+    const userData = JSON.parse(localStorage?.getItem("ultimaUser")) 
+    console.log("g",userData.fullName)
    
     return (
         <>
@@ -49,7 +51,7 @@ const Header = ({
                                 <IoMenu className="w-5 h-5 text-white" />
                             </span>
                             <p className="w-max flex items-center text-xs font-bold text-[rgb(82,100,132)] phone:hidden">
-                                angelo12
+                                {userData.fullName}
                                 <span>
                                     <FaAngleDown />
                                 </span>
@@ -64,10 +66,10 @@ const Header = ({
                                         </div>
                                         <div>
                                             <p className="text-sm font-bold text-[rgb(54,74,99)]">
-                                                angelo12
+                                            {userData.fullName}
                                             </p>
                                             <p className="text-[rgb(128,148,174)] text-xs">
-                                                email.gmail.com
+                                            {userData.email}
                                             </p>
                                         </div>
                                     </div>
