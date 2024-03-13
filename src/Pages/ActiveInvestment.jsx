@@ -24,7 +24,7 @@ const ActiveInvestment = () => {
                   </div>
                   <div className="w-full h-9 border-t-0  border-b border flex border-gray-200 pl-4">
                       <div className="w-[60%] h-full flex items-center  border-r border-r-gray-200">
-                          $100.00 - $2999.00
+                          $1000.00 - $10000.00
                       </div>
                       <div className="w-[40%] pl-4 flex items-center h-full">
                           4.50 %
@@ -49,7 +49,7 @@ const ActiveInvestment = () => {
                   </div>
                   <div className="w-full h-9 border-t-0  border-b border flex border-gray-200 pl-4">
                       <div className="w-[60%] h-full flex items-center  border-r border-r-gray-200">
-                          $3000.00 - $6999.00
+                         $10000.00 - $30000.00
                       </div>
                       <div className="w-[40%] pl-4 flex items-center h-full">
                           6.5
@@ -74,7 +74,7 @@ const ActiveInvestment = () => {
                   </div>
                   <div className="w-full h-9 border-t-0  border-b border flex border-gray-200 pl-4">
                       <div className="w-[60%] h-full flex items-center  border-r border-r-gray-200">
-                          $7000.00 - $14999.00
+                        $30000.00 - $50000.00
                       </div>
                       <div className="w-[40%] pl-4 flex items-center h-full">
                           8.0 %
@@ -99,7 +99,7 @@ const ActiveInvestment = () => {
                   </div>
                   <div className="w-full h-9 border-t-0  border-b border flex border-gray-200 pl-4">
                       <div className="w-[60%] h-full flex items-center  border-r border-r-gray-200">
-                          $15000.00 and more
+                        $100000.00 - UNLIMITED
                       </div>
                       <div className="w-[40%] pl-4 flex items-center h-full">
                           10.50 %

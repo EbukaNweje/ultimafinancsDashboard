@@ -172,7 +172,9 @@ const Dashboard = () => {
                             AVAILABLE BALANCE
                         </p>
                         <p className="text-2xl font-bold text-[rgb(101,118,255)]">
-                            $0.00
+                            {
+                                userData?.accountBalance
+                            }.00
                         </p>
                     </div>
                     <div className="w-full h-[63vh] text-xs text-[rgb(128,148,174)] font-bold flex flex-col gap-4 overflow-y-auto">
