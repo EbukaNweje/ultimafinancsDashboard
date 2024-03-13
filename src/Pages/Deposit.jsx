@@ -70,11 +70,14 @@ const Deposit = () => {
                     <p className="text-2xl text-[rgb(54,74,99)] font-bold">
                         Select a Plan:
                     </p>
+                    <p className="text-2xl font-bold text-[rgb(54,74,99)]">
+                        Rockie Plan
+                    </p>
                     <div className="w-full h-max rounded border border-gray-300">
                         <div className="w-full h-10 px-5 flex items-center border-b border-b-gray-300 bg-[#ff950d] text-white">
                             <input type="radio" />
                             <p className="text-sm font-bold">
-                                4.5% After 24 hours
+                                4.50% After 24 hours
                             </p>
                         </div>
                         <div className="w-full h-10  flex items-center border-b border-b-gray-300">
@@ -87,16 +90,19 @@ const Deposit = () => {
                         </div>
                         <div className="w-full h-10  flex items-center border-b border-b-gray-300">
                             <div className="w-[65%] h-full flex px-5 items-center border-r border-r-gray-300 text-sm text-[rgb(82,100,132)] ">
-                                $100.00 - $2999.00
+                                $1000.00 - $10000.00
                             </div>
                             <div className="w-[35%] h-full flex px-5 items-center text-sm text-[rgb(82,100,132)] ">
-                                4.50 %
+                                4.50%
                             </div>
                         </div>
                         <div className="w-full h-10 px-5 flex items-center justify-end text-sm text-blue-500">
                             Calculate your profit &gt; &gt;
                         </div>
                     </div>
+                    <p className="text-2xl font-bold text-[rgb(54,74,99)]">
+                        Standard Plan
+                    </p>
                     <div className="w-full h-max rounded border border-gray-300">
                         <div className="w-full h-10 px-5 flex items-center border-b border-b-gray-300 bg-[#ff950d] text-white">
                             <input type="radio" />
@@ -114,7 +120,7 @@ const Deposit = () => {
                         </div>
                         <div className="w-full h-10  flex items-center border-b border-b-gray-300">
                             <div className="w-[65%] h-full flex px-5 items-center border-r border-r-gray-300 text-sm text-[rgb(82,100,132)] ">
-                                $3000.00 - $6999.00
+                                $10000.00 - $30000.00
                             </div>
                             <div className="w-[35%] h-full flex px-5 items-center text-sm text-[rgb(82,100,132)] ">
                                 6.50 %
@@ -124,6 +130,9 @@ const Deposit = () => {
                             Calculate your profit &gt; &gt;
                         </div>
                     </div>
+                    <p className="text-2xl font-bold text-[rgb(54,74,99)]">
+                        Expert Plan
+                    </p>
                     <div className="w-full h-max rounded border border-gray-300">
                         <div className="w-full h-10 px-5 flex items-center border-b border-b-gray-300 bg-[#ff950d] text-white">
                             <input type="radio" />
@@ -141,7 +150,7 @@ const Deposit = () => {
                         </div>
                         <div className="w-full h-10  flex items-center border-b border-b-gray-300">
                             <div className="w-[65%] h-full flex px-5 items-center border-r border-r-gray-300 text-sm text-[rgb(82,100,132)] ">
-                                $7000.00 - $14999.00
+                                $30000.00 - $50000.00
                             </div>
                             <div className="w-[35%] h-full flex px-5 items-center text-sm text-[rgb(82,100,132)] ">
                                 8.00 %
@@ -151,6 +160,9 @@ const Deposit = () => {
                             Calculate your profit &gt; &gt;
                         </div>
                     </div>
+                    <p className="text-2xl font-bold text-[rgb(54,74,99)]">
+                        Expert Plan
+                    </p>
                     <div className="w-full h-max rounded border border-gray-300">
                         <div className="w-full h-10 px-5 flex items-center border-b border-b-gray-300 bg-[#ff950d] text-white">
                             <input type="radio" />
@@ -168,7 +180,7 @@ const Deposit = () => {
                         </div>
                         <div className="w-full h-10  flex items-center border-b border-b-gray-300">
                             <div className="w-[65%] h-full flex px-5 items-center border-r border-r-gray-300 text-sm text-[rgb(82,100,132)] ">
-                                $15000.00 and more
+                             $100000.00 - UNLIMITED
                             </div>
                             <div className="w-[35%] h-full flex px-5 items-center text-sm text-[rgb(82,100,132)] ">
                                 10.50 %
