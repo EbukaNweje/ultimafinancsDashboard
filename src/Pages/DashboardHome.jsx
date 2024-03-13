@@ -1,7 +1,7 @@
 import {IoWalletOutline} from "react-icons/io5";
 import computer from "../assets/computer.png";
 
-const DashboardHome = ({handleDep}) => {
+const DashboardHome = ({handleDep, handleDep2}) => {
 
     const userData = localStorage?.getItem("ultimaUser")
         ? JSON.parse(localStorage?.getItem("ultimaUser"))
@@ -18,7 +18,7 @@ const DashboardHome = ({handleDep}) => {
                     <button className="py-2 px-6 rounded cursor-pointer bg-[#1083d4] text-white text-base font-bold" onClick={handleDep}>
                         Deposit
                     </button>
-                    <button className="py-2 px-6 rounded cursor-pointer bg-[#000] text-white text-base font-bold">
+                    <button className="py-2 px-6 rounded cursor-pointer bg-[#000] text-white text-base font-bold" onClick={handleDep2}>
                         Withdraw
                     </button>
                 </div>

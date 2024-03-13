@@ -264,6 +264,7 @@ const Dashboard = () => {
                         <DashboardHome
                             userData={userData}
                             handleDep={handleShowDeposit}
+                            handleDep2={handleShowWithdraw}
                         />
                     ) : invest ? (
                         <Invest userData={userData} />
