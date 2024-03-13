@@ -123,46 +123,6 @@ const Invest = () => {
                       Calculate your profit &gt; &gt;
                   </div>
               </div>
-              {/* <div className="w-[40%] phone:w-full h-max flex flex-col gap-4">
-                  <p className="w-full h-max flex items-center justify-between">
-                      Account Balance: <span>$0.00</span>
-                  </p>
-                  <p className="w-full">Amount to spend ($)</p>
-                  <input type="text" className="w-full h-10 border-gray-200 border rounded outline-sky-100 pl-2"/>
-                  <p className="flex items-center gap-2">
-                      <input type="radio" />
-                      Spend funds from Bitcoin - BTC
-                  </p>
-                  <p className="flex items-center gap-2">
-                      <input type="radio" />
-                      Spend funds from Ethereum - ETH
-                  </p>
-                  <p className="flex items-center gap-2">
-                      <input type="radio" />
-                      Spend funds from Tether - USDT
-                  </p>
-                  <p className="flex items-center gap-2">
-                      <input type="radio" />
-                      Spend funds from Tron -TRX
-                  </p>
-                  <p className="flex items-center gap-2">
-                      <input type="radio" />
-                      Spend funds from Shiba Inu
-                  </p>
-                  <p className="flex items-center gap-2">
-                      <input type="radio" />
-                      Spend funds from Bitcoin Cash - BCH
-                  </p>
-                  <p className="flex items-center gap-2">
-                      <input type="radio" />
-                      Spend funds from Litecoin - LTC
-                  </p>
-                  <p className="flex items-center gap-2">
-                      <input type="radio" />
-                      Spend funds from Xrp - (ripple)
-                  </p>
-                  <button className="px-4 py-2 bg-[#171250] text-white rounded w-max text-sm">Spend</button>
-              </div> */}
           </div>
       </div>
   );
