@@ -1,28 +1,27 @@
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
+import Forgottenpassword from "./pages/Auth/Forgottenpassword";
+import Reset from "./pages/Auth/Reset";
 import Verify from "./pages/Auth/Verify";
 import ErrorPage from "./components/ErrorPage";
-import DashboardRoute from "./routes/DashboardRoute";
-import Dashboard from "./pages/dashboard/Dashboard";
 import DashboardHome from "./pages/dashboard/DashboardHome";
+import DashboardRoute from "./routes/DashboardRoute";
 import Deposit from "./pages/dashboard/Deposit";
+import DepositPay from "./pages/dashboard/DepositPay";
 import MyPlans from "./pages/dashboard/MyPlans";
 import NewWithdrawal from "./pages/dashboard/NewWithdrawal";
 import NewBonus from "./pages/dashboard/NewBonus";
-import DepositPay from "./pages/dashboard/DepositPay";
 import Investments from "./pages/dashboard/Investments";
 import InvestmentsView from "./pages/dashboard/InvestmentsView";
+import DepositHistoryView from "./pages/dashboard/DepositHistoryView";
+import Withdrawals from "./pages/dashboard/Withdrawals";
 import DepositHistory from "./pages/dashboard/DepositHistory";
 import MyWithdrawal from "./pages/dashboard/MyWithdrawal";
 import Profile from "./pages/dashboard/Profile";
 import Referral from "./pages/dashboard/Referral";
-import Forgottenpassword from "./pages/Auth/Forgottenpassword";
-import Reset from "./pages/Auth/Reset";
 import Profit from "./pages/dashboard/Profit";
-import DepositHistoryView from "./pages/dashboard/DepositHistoryView";
 import Investmentpay from "./pages/dashboard/Investmentpay";
-import Withdrawals from "./pages/dashboard/Withdrawals";
 
 const App = () => {
   const router = createHashRouter([
