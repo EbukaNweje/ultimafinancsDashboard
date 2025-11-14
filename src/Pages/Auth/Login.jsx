@@ -18,10 +18,6 @@ const Login = () => {
   const User = z.object({
     email: z.string().email({ message: "Must be a valid email" }),
     password: z.string().min(1, { message: "Password is required" }),
-    // .regex(/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/, {
-    //   message:
-    //     "Password must be 8 characters long, uppercase and special character (!@#$%^&*).",
-    // }),
   });
 
   const {
