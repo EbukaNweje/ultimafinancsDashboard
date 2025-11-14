@@ -1,26 +1,32 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
-  /* @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap'); */
+/* color{
+  small fade text - [#8094ae]
+  big text bold black - [#364a63]
+  normal text black - [#526484]
+  purple bg - [#a286f4]
+  grey bg - [#f5f6fa]
+} */
 
-
-:root{
-  --swift-primary--: #0e4152;
-  --swift-primary-two--: #062530;
-  --swift-secondary--: #ebf8fc;
-  --swift-icon-nav--: #8492a6;
-  --swift-red--: #ff5659;
-  --swift-red-error--: #e75263;
-  --swift-secondary-big-text--: #8492a6;
+.dropdown {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out,
+      visibility 0.25s ease-in-out;
+  will-change: transform;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
-  font-family: 'Nunito Sans', sans-serif;
+.dropdown.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0, 1, 0.4, 1),
+      transform 0.8s cubic-bezier(0.18, 1.25, 0.4, 1), visibility 0.4s linear;
+  transform: scale(1);
 }
 
+.ant-drawer-body {
+  padding: 0 !important;
+}

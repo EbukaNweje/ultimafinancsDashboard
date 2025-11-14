@@ -1,27 +1,21 @@
+import React, { useState } from "react";
 import { FaInstagram, FaTelegram, FaTwitter } from "react-icons/fa";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
+import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import toast, { Toaster } from "react-hot-toast";
+import { toast, Toaster } from "react-hot-toast";
 import axios from "axios";
-import { userId } from "../../global/features";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
 import { ClipLoader } from "react-spinners";
 
-const Login = () => {
+const Forgottenpassword = () => {
   const Nav = useNavigate();
-  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
+  const currentYear = new Date().getFullYear();
 
   const User = z.object({
     email: z.string().email({ message: "Must be a valid email" }),
-    password: z.string().min(1, { message: "Password is required" }),
-    // .regex(/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/, {
-    //   message:
-    //     "Password must be 8 characters long, uppercase and special character (!@#$%^&*).",
-    // }),
   });
 
   const {
@@ -34,31 +28,28 @@ const Login = () => {
   });
 
   const Onsubmit = async (data, e) => {
-    console.log(data);
-    setLoading(true);
     e.preventDefault();
-    const url = "https://ultima-finances-backend.vercel.app/api/login";
+    setLoading(true);
+    const url =
+      "https://ultima-finances-backend.vercel.app/api/forgot-password";
     const FormData = {
       email: data.email,
-      password: data.password,
     };
-
+    console.log(FormData);
     await axios
       .post(url, FormData)
-      .then((response) => {
+      .then((res) => {
         setLoading(false);
-        console.log("response:", response.data?._id);
-        dispatch(userId(response?.data?._id));
-        toast.success(response?.message);
-        Nav("/dashboard");
+        console.log(res);
+        toast.success(res.data.message);
+        Nav("/reset-password");
       })
-      .catch((error) => {
+      .catch((Error) => {
         setLoading(false);
-        toast.error(error?.response?.data?.message);
-        console.log("error:", error);
+        console.log(Error);
+        toast.error(Error.response.message);
       });
   };
-  const currentYear = new Date().getFullYear();
 
   return (
     <div className="w-full h-screen">
@@ -76,9 +67,9 @@ const Login = () => {
         </div>
       </div>
       <div className="w-full h-[calc(100%-6.5rem)] phone:h-[calc(100%-6rem)] bg-[#ffffff] flex items-center justify-center flex-col gap-5">
-        <p className="text-xl text-[#5d3891] font-semibold">
-          Login your account
-        </p>
+        <div className="w-[33rem] text-xl text-[#5d3891] font-semibold flex items-start">
+          Forgot password
+        </div>
         <form
           onSubmit={handleSubmit(Onsubmit)}
           className="w-max phone:w-full phone:px-4 h-max flex flex-col items-center gap-5"
@@ -95,38 +86,18 @@ const Login = () => {
           {errors?.email && (
             <span style={{ color: "red" }}>{errors.email.message}</span>
           )}
-          <input
-            type="password"
-            name=""
-            id=""
-            className="w-[33rem] phone:w-full h-12 rounded border border-gray-100 bg-[#f8f8f8] outline-none pl-4"
-            placeholder="password *"
-            required
-            {...register("password")}
-          />
-          {errors?.password && (
-            <span style={{ color: "red" }}>{errors.password.message}</span>
-          )}
           <button
             type="submit"
-            // onClick={() => Nav('/dashboard')}
+            // onClick={() => Nav('/reset-password')}
             className="w-40 h-12 rounded bg-[#a286f4] text-white text-sm font-bold transition-all duration-500 hover:bg-white hover:border-2 hover:text-[#a286f4] hover:border-[#a286f4]"
           >
-            {loading ? (
-              <ClipLoader color="white" className="hover:bg-#a286f4" />
-            ) : (
-              " LOG IN"
-            )}
+            Confirm
           </button>
           <div className="w-max phone:w-full phone:justify-between phone:gap-0 h-max flex gap-80 text-sm text-[#a286f4]">
-            <div
-              className="w-max h-max cursor-pointer"
-              onClick={() => Nav("forgotten-password")}
-            >
-              Forgot Password?
-            </div>
             <NavLink to={"/register"}>
-              <div className="w-max h-max cursor-pointer">Create Account</div>
+              <div className="w-max h-max cursor-pointer">
+                {loading ? <ClipLoader color="white" /> : " Create Account"}
+              </div>
             </NavLink>
           </div>
         </form>
@@ -134,7 +105,7 @@ const Login = () => {
       <div className="w-full phone:h-24 phone:gap-3 phone:flex-col phone:justify-center  phone:py-4 h-14 text-white px-48 flex items-center justify-between bg-[#0e1120]">
         <div className="w-max flex items-center gap-4">
           <p className="flex gap-5 items-center text-white">
-            &copy; Copy Rights {currentYear}. All Rights Reserved Ultima Finance
+            &copy; Copy Rights 2025. All Rights Reserved Ultima Finance
           </p>
         </div>
         <div className="w-max flex items-center gap-5 ">
@@ -148,4 +119,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Forgottenpassword;
