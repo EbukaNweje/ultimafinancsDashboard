@@ -28,7 +28,6 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
   } = useForm({
     resolver: zodResolver(User),
   });
